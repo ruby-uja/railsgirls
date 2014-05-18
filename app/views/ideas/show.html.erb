@@ -5,10 +5,19 @@
   <%= @idea.name %>
 </p>
 
+
 <p>
   <strong>Description:</strong>
   <%= @idea.description %>
 </p>
+
+<p>
+  <strong>Pictures:</strong>
+  <% @idea.pictures.each do |picture| %>
+   <%= image_tag(picture.path_url, :width => 600) if picture.path.present? %>
+  <% end %>
+</p>
+
 
 
 

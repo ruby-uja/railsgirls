@@ -15,6 +15,7 @@ class IdeasController < ApplicationController
   # GET /ideas/new
   def new
     @idea = Idea.new
+    @idea.pictures.build
   end
 
   # GET /ideas/1/edit
@@ -69,6 +70,6 @@ class IdeasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:name, :description)
+      params.require(:idea).permit(:name, :description, :pictures)
     end
 end
